@@ -1,0 +1,131 @@
+.game-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+}
+
+.game-user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.game-username {
+  min-width: 0;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.05rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-logout-btn,
+.game-secondary-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--choice-border);
+  border-radius: var(--radius-sm);
+  background: var(--choice-bg);
+  color: var(--choice-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.game-secondary-btn {
+  background: transparent;
+}
+
+.game-logout-btn:hover,
+.game-secondary-btn:hover {
+  background: var(--choice-hover-bg);
+  color: var(--choice-hover-text);
+  border-color: var(--choice-hover-bg);
+}
+
+.game-content {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.game-loading,
+.game-error {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.game-error {
+  display: grid;
+  gap: 24px;
+}
+
+.game-error button {
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 1px solid var(--restart-border);
+  border-radius: var(--radius-sm);
+  background: var(--restart-bg);
+  color: var(--restart-text);
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.game-error button:hover {
+  background: var(--restart-hover-bg);
+  color: var(--restart-hover-text);
+}
+
+@media (max-width: 640px) {
+  .game-header {
+    padding: 12px 16px;
+  }
+
+  .game-content {
+    padding: 16px;
+  }
+
+  .game-username {
+    font-size: 0.95rem;
+  }
+
+  .game-header-actions {
+    gap: 6px;
+  }
+
+  .game-logout-btn,
+  .game-secondary-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
